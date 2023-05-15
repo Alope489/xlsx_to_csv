@@ -5,6 +5,8 @@ import os
 def xlsx_to_csv(file_path):
 
     df = pd.read_excel(file_path)
+    
+    df.replace('_', '|', regex=True, inplace=True)
 
     df_transposed = df.transpose()
 
